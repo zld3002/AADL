@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:component="http:///AADL/component" xmlns:core="http:///AADL/core" xmlns:feature="http:///AADL/feature" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/component">
+<xsd:import namespace="http:///AADL/feature" schemaLocation="feature.xsd"/>
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:import namespace="http://www.omg.org/XMI" schemaLocation="XMI.xsd"/>
+<xsd:complexType name="SystemType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:SystemType"/>
+<xsd:element name="features" type="feature:SystemFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemType" type="component:SystemType"/>
+<xsd:complexType name="DataType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:DataType"/>
+<xsd:element name="features" type="feature:DataFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataType" type="component:DataType"/>
+<xsd:complexType name="ThreadType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:ThreadType"/>
+<xsd:element name="features" type="feature:ThreadFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadType" type="component:ThreadType"/>
+<xsd:complexType name="ThreadGroupType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:ThreadGroupType"/>
+<xsd:element name="features" type="feature:ThreadGroupFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupType" type="component:ThreadGroupType"/>
+<xsd:complexType name="ProcessType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:ProcessType"/>
+<xsd:element name="features" type="feature:ProcessFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessType" type="component:ProcessType"/>
+<xsd:complexType name="SubprogramType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:SubprogramType"/>
+<xsd:element name="features" type="feature:SubprogramFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramType" type="component:SubprogramType"/>
+<xsd:complexType name="ProcessorType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:ProcessorType"/>
+<xsd:element name="features" type="feature:ProcessorFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorType" type="component:ProcessorType"/>
+<xsd:complexType name="MemoryType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:MemoryType"/>
+<xsd:element name="features" type="feature:MemoryFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemoryType" type="component:MemoryType"/>
+<xsd:complexType name="BusType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:BusType"/>
+<xsd:element name="features" type="feature:BusFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusType" type="component:BusType"/>
+<xsd:complexType name="DeviceType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentType">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" nillable="true" type="component:DeviceType"/>
+<xsd:element name="features" type="feature:DeviceFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceType" type="component:DeviceType"/>
+<xsd:complexType name="SystemImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:SystemSubcomponents"/>
+<xsd:element name="compType" type="component:SystemType"/>
+<xsd:element name="extend" nillable="true" type="component:SystemImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemImpl" type="component:SystemImpl"/>
+<xsd:complexType name="DataImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:DataSubcomponents"/>
+<xsd:element name="compType" type="component:DataType"/>
+<xsd:element name="extend" nillable="true" type="component:DataImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataImpl" type="component:DataImpl"/>
+<xsd:complexType name="ThreadImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:ThreadSubcomponents"/>
+<xsd:element name="compType" type="component:ThreadType"/>
+<xsd:element name="extend" nillable="true" type="component:ThreadImpl"/>
+<xsd:element name="callSequences" type="component:CallSequences"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadImpl" type="component:ThreadImpl"/>
+<xsd:complexType name="ThreadGroupImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:ThreadGroupSubcomponents"/>
+<xsd:element name="compType" type="component:ThreadGroupType"/>
+<xsd:element name="extend" nillable="true" type="component:ThreadGroupImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupImpl" type="component:ThreadGroupImpl"/>
+<xsd:complexType name="ProcessImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:ProcessSubcomponents"/>
+<xsd:element name="compType" type="component:ProcessType"/>
+<xsd:element name="extend" nillable="true" type="component:ProcessImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessImpl" type="component:ProcessImpl"/>
+<xsd:complexType name="SubprogramImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="compType" type="component:SubprogramType"/>
+<xsd:element name="extend" nillable="true" type="component:SubprogramImpl"/>
+<xsd:element name="subcomponents" type="component:SubprogramSubcomponents"/>
+<xsd:element name="callSequences" type="component:CallSequences"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramImpl" type="component:SubprogramImpl"/>
+<xsd:complexType name="ProcessorImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:ProcessorSubcomponents"/>
+<xsd:element name="compType" type="component:ProcessorType"/>
+<xsd:element name="extend" nillable="true" type="component:ProcessorImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorImpl" type="component:ProcessorImpl"/>
+<xsd:complexType name="MemoryImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:MemorySubcomponents"/>
+<xsd:element name="compType" type="component:MemoryType"/>
+<xsd:element name="extend" nillable="true" type="component:MemoryImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemoryImpl" type="component:MemoryImpl"/>
+<xsd:complexType name="BusImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="compType" type="component:BusType"/>
+<xsd:element name="extend" nillable="true" type="component:BusImpl"/>
+<xsd:element name="subcomponents" type="component:BusSubcomponents"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusImpl" type="component:BusImpl"/>
+<xsd:complexType name="DeviceImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentImpl">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" type="component:DeviceSubcomponents"/>
+<xsd:element name="compType" type="component:DeviceType"/>
+<xsd:element name="extend" nillable="true" type="component:DeviceImpl"/>
+</xsd:choice>
+<xsd:attribute name="compType" type="xsd:string"/>
+<xsd:attribute name="extend" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceImpl" type="component:DeviceImpl"/>
+<xsd:complexType name="SystemSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:SystemSubcomponent"/>
+<xsd:element name="classifier" type="component:SystemClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemSubcomponent" type="component:SystemSubcomponent"/>
+<xsd:complexType name="DataSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:DataSubcomponent"/>
+<xsd:element name="classifier" type="component:DataClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataSubcomponent" type="component:DataSubcomponent"/>
+<xsd:complexType name="ThreadSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:ThreadSubcomponent"/>
+<xsd:element name="classifier" type="component:ThreadClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadSubcomponent" type="component:ThreadSubcomponent"/>
+<xsd:complexType name="ThreadGroupSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:ThreadGroupSubcomponent"/>
+<xsd:element name="classifier" type="component:ThreadGroupClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupSubcomponent" type="component:ThreadGroupSubcomponent"/>
+<xsd:complexType name="ProcessSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:ProcessSubcomponent"/>
+<xsd:element name="classifier" type="component:ProcessClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessSubcomponent" type="component:ProcessSubcomponent"/>
+<xsd:complexType name="SubprogramSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="dataSubprogram" type="feature:Subprogram"/>
+<xsd:element name="classifier" type="component:SubprogramClassifier"/>
+</xsd:choice>
+<xsd:attribute name="dataSubprogram" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramSubcomponent" type="component:SubprogramSubcomponent"/>
+<xsd:complexType name="ProcessorSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:ProcessorSubcomponent"/>
+<xsd:element name="classifier" type="component:ProcessorClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorSubcomponent" type="component:ProcessorSubcomponent"/>
+<xsd:complexType name="MemorySubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:MemorySubcomponent"/>
+<xsd:element name="classifier" type="component:MemoryClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemorySubcomponent" type="component:MemorySubcomponent"/>
+<xsd:complexType name="BusSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:BusSubcomponent"/>
+<xsd:element name="classifier" type="component:BusClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusSubcomponent" type="component:BusSubcomponent"/>
+<xsd:complexType name="DeviceSubcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponent">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" nillable="true" type="component:DeviceSubcomponent"/>
+<xsd:element name="classifier" type="component:DeviceClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="classifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceSubcomponent" type="component:DeviceSubcomponent"/>
+<xsd:complexType name="SystemSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemSubcomponents" type="component:SystemSubcomponents"/>
+<xsd:complexType name="DataSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="dataSubcomponent" type="component:DataSubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataSubcomponents" type="component:DataSubcomponents"/>
+<xsd:complexType name="ThreadSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="dataSubcomponent" type="component:DataSubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadSubcomponents" type="component:ThreadSubcomponents"/>
+<xsd:complexType name="ThreadGroupSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupSubcomponents" type="component:ThreadGroupSubcomponents"/>
+<xsd:complexType name="ProcessSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="subcomponents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessSubcomponents" type="component:ProcessSubcomponents"/>
+<xsd:complexType name="ProcessorSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="memorySubcomponent" type="component:MemorySubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorSubcomponents" type="component:ProcessorSubcomponents"/>
+<xsd:complexType name="MemorySubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="memorySubcomponent" type="component:MemorySubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemorySubcomponents" type="component:MemorySubcomponents"/>
+<xsd:complexType name="DeviceSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="threadSubcomponent" type="component:ThreadSubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceSubcomponents" type="component:DeviceSubcomponents"/>
+<xsd:complexType name="DataClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataClassifier" type="component:DataClassifier"/>
+<xsd:complexType name="BusClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusClassifier" type="component:BusClassifier"/>
+<xsd:complexType name="SubprogramSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramSubcomponents" type="component:SubprogramSubcomponents"/>
+<xsd:complexType name="CallSequence">
+<xsd:complexContent>
+<xsd:extension base="core:ModeMember">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="call" type="component:SubprogramSubcomponent"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="CallSequence" type="component:CallSequence"/>
+<xsd:complexType name="SubprogramClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramClassifier" type="component:SubprogramClassifier"/>
+<xsd:complexType name="CallSequences">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="callSequence" type="component:CallSequence"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="CallSequences" type="component:CallSequences"/>
+<xsd:complexType name="SystemClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemClassifier" type="component:SystemClassifier"/>
+<xsd:complexType name="ThreadClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadClassifier" type="component:ThreadClassifier"/>
+<xsd:complexType name="ThreadGroupClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupClassifier" type="component:ThreadGroupClassifier"/>
+<xsd:complexType name="ProcessClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessClassifier" type="component:ProcessClassifier"/>
+<xsd:complexType name="ProcessorClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorClassifier" type="component:ProcessorClassifier"/>
+<xsd:complexType name="MemoryClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemoryClassifier" type="component:MemoryClassifier"/>
+<xsd:complexType name="DeviceClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceClassifier" type="component:DeviceClassifier"/>
+<xsd:complexType name="BusSubcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:Subcomponents"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusSubcomponents" type="component:BusSubcomponents"/>
+</xsd:schema>

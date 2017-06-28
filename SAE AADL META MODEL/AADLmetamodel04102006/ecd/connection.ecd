@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1795,985" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#/" metadata="emf-1.0" initialized="true" scrolledX="381" scrolledY="478" tag="5" key="3230303430383331206564752E636D752E7365692E6161646C2E65636F72656D6F64656C">
+  <children xsi:type="editmodel:EnumerationEditModel" name="ConnectionTiming" location="1057,767" size="159,75" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ConnectionTiming">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="Immediate" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ConnectionTiming/Immediate">
+        <model href="connection.ecore#//ConnectionTiming/Immediate"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="Delayed" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ConnectionTiming/Delayed">
+        <model href="connection.ecore#//ConnectionTiming/Delayed"/>
+      </children>
+    </children>
+    <model href="connection.ecore#//ConnectionTiming"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.3 //@children.7/@sourceConnections.2" name="DataPort" location="1047,677" size="151,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//DataPort" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,54"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.1" target="//@children.17" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="134,13"/>
+    </sourceConnections>
+    <model href="feature.ecore#//DataPort"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0 //@children.6/@sourceConnections.1" name="EventPort" location="828,631" size="157,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//EventPort" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="feature.ecore#//EventPort"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.1 //@children.5/@sourceConnections.0" name="EventDataPort" location="1300,712" size="186,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//EventDataPort" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,54"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.3" target="//@children.17" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="134,17"/>
+    </sourceConnections>
+    <model href="feature.ecore#//EventDataPort"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0" name="Connections" location="730,264" size="121,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections" runTimeClassModel="contents">
+    <children xsi:type="editmodel:CompartmentEditModel" size="428,72"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dataConnection" location="43,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/dataConnection" multiplicityLabel="//@children.4/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.4/@sourceConnections.0/@children.0/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dataConnection" location="1088,474" size="76,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="1036,474" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/dataConnection"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,29" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="eventDataConnection" location="53,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/eventDataConnection" multiplicityLabel="//@children.4/@sourceConnections.1/@children.0/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.0/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="eventDataConnection" location="1342,472" size="104,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="1262,472" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/eventDataConnection"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="98,29" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.10" targetEnd="//@children.4/@sourceConnections.2/@children.1" sourceEnd="//@children.4/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="116,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="portGroupConnection" location="64,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/portGroupConnection" multiplicityLabel="//@children.4/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.2/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="portGroupConnection" location="1610,469" size="104,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="1579,469" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/portGroupConnection"/>
+      </children>
+      <bendpoints secondRelativeDimension="-3,-78" firstRelativeDimension="728,119"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.16" targetEnd="//@children.4/@sourceConnections.3/@children.1" sourceEnd="//@children.4/@sourceConnections.3/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="12,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dataAccessConnection" location="138,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/dataAccessConnection" multiplicityLabel="//@children.4/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.3/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dataAccessConnection" location="84,441" size="114,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="212,441" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/dataAccessConnection"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.23" targetEnd="//@children.4/@sourceConnections.4/@children.1" sourceEnd="//@children.4/@sourceConnections.4/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="35,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="busAccessConnection" location="113,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/busAccessConnection" multiplicityLabel="//@children.4/@sourceConnections.4/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.4/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="busAccessConnection" location="306,476" size="111,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="431,476" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/busAccessConnection"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.18" targetEnd="//@children.4/@sourceConnections.5/@children.1" sourceEnd="//@children.4/@sourceConnections.5/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="51,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="parameterConnection" location="177,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/parameterConnection" multiplicityLabel="//@children.4/@sourceConnections.5/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.5/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="parameterConnection" location="623,473" size="104,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="741,473" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/parameterConnection"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.6" targetEnd="//@children.4/@sourceConnections.6/@children.0" sourceEnd="//@children.4/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="eventConnection" location="10,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//Connections/eventConnection" multiplicityLabel="//@children.4/@sourceConnections.6/@children.0/@children.1" roleLabel="//@children.4/@sourceConnections.6/@children.0/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="eventConnection" location="847,469" size="82,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..*" location="816,469" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//Connections/eventConnection"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="68,29" attachSource="true"/>
+    </sourceConnections>
+    <model href="connection.ecore#//Connections"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1 //@children.5/@sourceConnections.3" name="EventDataConnection" location="1282,493" size="179,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventDataConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.3" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="98,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="118,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventDataConnection/dst" multiplicityLabel="//@children.5/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="1395,691" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1425,691" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventDataConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="101,-123" firstRelativeDimension="101,67"/>
+      <bendpoints secondRelativeDimension="88,-51" firstRelativeDimension="88,139"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.3" targetEnd="//@children.5/@sourceConnections.1/@children.1" sourceEnd="//@children.5/@sourceConnections.1/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="98,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="80,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventDataConnection/src" multiplicityLabel="//@children.5/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="1387,691" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1345,691" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventDataConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="-54,-133" firstRelativeDimension="-72,57"/>
+      <bendpoints secondRelativeDimension="-59,-50" firstRelativeDimension="-77,140"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.5" target="//@children.16/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.2/@children.1" sourceEnd="//@children.5/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="89,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="22,127"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.5" targetEnd="//@children.5/@sourceConnections.3/@children.1" sourceEnd="//@children.5/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="10,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventDataConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.5/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="1299,472" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1266,472" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventDataConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <model href="connection.ecore#//EventDataConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.6 //@children.6/@sourceConnections.3" name="EventConnection" location="830,490" size="150,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="74,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="76,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventConnection/dst" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="911,610" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="890,610" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="10,-56" firstRelativeDimension="10,56"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.1/@children.1" sourceEnd="//@children.6/@sourceConnections.1/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="38,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventConnection/src" multiplicityLabel="//@children.6/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="842,610" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="873,610" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="-8,-58" firstRelativeDimension="-26,54"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.6" target="//@children.16/@sourceConnections.0" targetEnd="//@children.6/@sourceConnections.2/@children.1" sourceEnd="//@children.6/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="22,127"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.6" target="//@children.6" targetEnd="//@children.6/@sourceConnections.3/@children.1" sourceEnd="//@children.6/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="29,29" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="0,14" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//EventConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.6/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="788,483" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="804,511" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//EventConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <model href="connection.ecore#//EventConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.7/@sourceConnections.1" name="DataConnection" location="1038,495" size="160,57" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataConnection" runTimeClassModel="timing">
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="timing" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataConnection/timing">
+        <model href="connection.ecore#//DataConnection/timing"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.7" target="//@children.16/@sourceConnections.0" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="23,127"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.7" target="//@children.7" targetEnd="//@children.7/@sourceConnections.1/@children.1" sourceEnd="//@children.7/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="10,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.7/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="1055,474" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1022,474" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.7" target="//@children.1" targetEnd="//@children.7/@sourceConnections.2/@children.1" sourceEnd="//@children.7/@sourceConnections.2/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="104,57" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="122,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataConnection/src" multiplicityLabel="//@children.7/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="1176,656" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1155,656" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="24,-54" firstRelativeDimension="24,71"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.7" target="//@children.1" targetEnd="//@children.7/@sourceConnections.3/@children.1" sourceEnd="//@children.7/@sourceConnections.3/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,57" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="75,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataConnection/dst" multiplicityLabel="//@children.7/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="1129,656" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1101,656" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="-16,-60" firstRelativeDimension="-33,65"/>
+    </sourceConnections>
+    <model href="connection.ecore#//DataConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ComponentImpl" location="699,100" size="182,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//ComponentImpl" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="205,54"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.8" target="//@children.4" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="connections" location="60,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//ComponentImpl/connections" multiplicityLabel="//@children.8/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="connections" location="797,243" size="60,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="764,243" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="core.ecore#//ComponentImpl/connections"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.8" target="//@children.12" targetEnd="//@children.8/@sourceConnections.1/@children.1" sourceEnd="//@children.8/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="182,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14"/>
+    </sourceConnections>
+    <model href="core.ecore#//ComponentImpl"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.16/@sourceConnections.0" name="Connection" location="1067,259" size="153,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//Connection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="148,126"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.9" target="//@children.12" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="srcContext" location="155,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//Connection/srcContext" multiplicityLabel="//@children.9/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.9/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="srcContext" location="1143,136" size="54,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1232,136" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="core.ecore#//Connection/srcContext"/>
+      </children>
+      <bendpoints secondRelativeDimension="58,120" firstRelativeDimension="119,-10"/>
+      <bendpoints secondRelativeDimension="68,56" firstRelativeDimension="129,-74"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.9" target="//@children.12" targetEnd="//@children.9/@sourceConnections.1/@children.1" sourceEnd="//@children.9/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dstContext" location="33,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//Connection/dstContext" multiplicityLabel="//@children.9/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.9/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dstContext" location="1089,136" size="53,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1054,136" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="core.ecore#//Connection/dstContext"/>
+      </children>
+      <bendpoints secondRelativeDimension="-45,119" firstRelativeDimension="-106,-11"/>
+      <bendpoints secondRelativeDimension="-46,37" firstRelativeDimension="-107,-93"/>
+    </sourceConnections>
+    <model href="core.ecore#//Connection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.3 //@children.4/@sourceConnections.2" name="PortGroupConnection" location="1539,490" size="180,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//PortGroupConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.10" target="//@children.16/@sourceConnections.0" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="21,127"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.10" target="//@children.11" targetEnd="//@children.10/@sourceConnections.1/@children.1" sourceEnd="//@children.10/@sourceConnections.1/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="80,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//PortGroupConnection/src" multiplicityLabel="//@children.10/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="1608,606" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1646,606" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//PortGroupConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="15,-68" firstRelativeDimension="15,40"/>
+      <bendpoints secondRelativeDimension="21,-58" firstRelativeDimension="21,50"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.10" target="//@children.11" targetEnd="//@children.10/@sourceConnections.2/@children.1" sourceEnd="//@children.10/@sourceConnections.2/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="43,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//PortGroupConnection/dst" multiplicityLabel="//@children.10/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="1572,606" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1602,606" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//PortGroupConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="-2,-63" firstRelativeDimension="-19,45"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.10" target="//@children.10" targetEnd="//@children.10/@sourceConnections.3/@children.1" sourceEnd="//@children.10/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="10,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//PortGroupConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.10/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="1556,469" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1523,469" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//PortGroupConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <model href="connection.ecore#//PortGroupConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.2 //@children.10/@sourceConnections.1" name="PortGroup" location="1552,627" size="161,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//PortGroup" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.11" target="//@children.12" targetEnd="//@children.11/@sourceConnections.0/@children.1" sourceEnd="//@children.11/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="108,29" attachSource="true"/>
+      <bendpoints secondRelativeDimension="590,485" firstRelativeDimension="101,-42"/>
+      <bendpoints secondRelativeDimension="572,111" firstRelativeDimension="83,-416"/>
+    </sourceConnections>
+    <model href="feature.ecore#//PortGroup"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.1 //@children.13/@sourceConnections.0 //@children.11/@sourceConnections.0 //@children.9/@sourceConnections.1 //@children.9/@sourceConnections.0" name="FeatureContext" location="1049,100" size="188,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//FeatureContext" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.12" target="//@children.36" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="95,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="86,29"/>
+    </sourceConnections>
+    <model href="connection.ecore#//FeatureContext"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Subcomponent" location="1380,100" size="177,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//Subcomponent" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,36"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.13" target="//@children.12" targetEnd="//@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.13/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="188,14"/>
+    </sourceConnections>
+    <model href="core.ecore#//Subcomponent"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Parameter" location="556,762" size="163,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//Parameter" runTimeClassModel="direction">
+    <children xsi:type="editmodel:CompartmentEditModel" size="185,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.14" target="//@children.17" targetEnd="//@children.14/@sourceConnections.0/@children.1" sourceEnd="//@children.14/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,29"/>
+    </sourceConnections>
+    <model href="feature.ecore#//Parameter"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DataAccess" location="2,793" size="168,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//DataAccess" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="174,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.26/@sourceConnections.0" source="//@children.15" target="//@children.24" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,29" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="feature.ecore#//DataAccess"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.16/@sourceConnections.1 //@children.4/@sourceConnections.3" name="DataAccessConnection" location="67,462" size="187,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataAccessConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.23/@sourceConnections.0 //@children.18/@sourceConnections.0 //@children.6/@sourceConnections.2 //@children.7/@sourceConnections.0 //@children.5/@sourceConnections.2 //@children.10/@sourceConnections.0" source="//@children.16" target="//@children.9" targetEnd="//@children.16/@sourceConnections.0/@children.1" sourceEnd="//@children.16/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,29" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.16" target="//@children.16" targetEnd="//@children.16/@sourceConnections.1/@children.1" sourceEnd="//@children.16/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="28,29" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="0,15" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataAccessConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.16/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="25,456" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="41,484" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataAccessConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.16" target="//@children.24" targetEnd="//@children.16/@sourceConnections.2/@children.1" sourceEnd="//@children.16/@sourceConnections.2/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="69,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataAccessConnection/src" multiplicityLabel="//@children.16/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="181,633" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="146,633" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataAccessConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="54,-80" firstRelativeDimension="54,83"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.16" target="//@children.24" targetEnd="//@children.16/@sourceConnections.3/@children.1" sourceEnd="//@children.16/@sourceConnections.3/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="32,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataAccessConnection/dst" multiplicityLabel="//@children.16/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="100,633" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="130,633" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//DataAccessConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="-18,-92" firstRelativeDimension="-35,71"/>
+    </sourceConnections>
+    <model href="connection.ecore#//DataAccessConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.0 //@children.1/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.18/@sourceConnections.2 //@children.18/@sourceConnections.3" name="ParameterEnd" location="588,683" size="134,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ParameterEnd" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:IndicationEditModel" source="//@children.17" target="//@children.21" targetEnd="//@children.17/@sourceConnections.0/@children.1" sourceEnd="//@children.17/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="34,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.17" target="//@children.35" targetEnd="//@children.17/@sourceConnections.1/@children.1" sourceEnd="//@children.17/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="15,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="142,29"/>
+    </sourceConnections>
+    <model href="connection.ecore#//ParameterEnd"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.5 //@children.18/@sourceConnections.1" name="ParameterConnection" location="557,494" size="182,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ParameterConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.18" target="//@children.16/@sourceConnections.0" targetEnd="//@children.18/@sourceConnections.0/@children.1" sourceEnd="//@children.18/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="348,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.18" target="//@children.18" targetEnd="//@children.18/@sourceConnections.1/@children.1" sourceEnd="//@children.18/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="48,29" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="0,13" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ParameterConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.18/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.18/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="515,486" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="531,514" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//ParameterConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.18" target="//@children.17" targetEnd="//@children.18/@sourceConnections.2/@children.1" sourceEnd="//@children.18/@sourceConnections.2/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="66,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ParameterConnection/src" multiplicityLabel="//@children.18/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.18/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="668,662" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="640,662" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//ParameterConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="29,-79" firstRelativeDimension="29,81"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.18" target="//@children.17" targetEnd="//@children.18/@sourceConnections.3/@children.1" sourceEnd="//@children.18/@sourceConnections.3/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="77,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="29,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//ParameterConnection/dst" multiplicityLabel="//@children.18/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.18/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="594,662" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="624,662" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//ParameterConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="-24,-71" firstRelativeDimension="-41,89"/>
+    </sourceConnections>
+    <model href="connection.ecore#//ParameterConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:NotepadEditModel" location="1315,595" size="140,38" fontInfo="Arial-8-0" note="Port references point to&#xD;&#xA;port objects in the type."/>
+  <children xsi:type="editmodel:NotepadEditModel" location="1044,167" size="195,80" fontInfo="Arial-8-0" note="This reference represents&#xD;&#xA;the context of the port reference&#xD;&#xA;This is the object that logically&#xD;&#xA;contains the port, which it inherited&#xD;&#xA;from the component type"/>
+  <children xsi:type="editmodel:NotepadEditModel" targetConnections="//@children.17/@sourceConnections.0" location="755,736" size="249,52" fontInfo="Arial-8-0" note="This class identifies the the classes of objects&#xD;&#xA;whose content can be passed to subprogram&#xD;&#xA;parameters."/>
+  <children xsi:type="editmodel:ClassEditModel" name="BusAccess" location="264,793" size="162,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/feature.ecore#//BusAccess" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="174,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.27/@sourceConnections.0" source="//@children.22" target="//@children.25" targetEnd="//@children.22/@sourceConnections.0/@children.1" sourceEnd="//@children.22/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,29" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="feature.ecore#//BusAccess"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.4 //@children.23/@sourceConnections.1" name="BusAccessConnection" location="311,497" size="181,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//BusAccessConnection" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.23" target="//@children.16/@sourceConnections.0" targetEnd="//@children.23/@sourceConnections.0/@children.1" sourceEnd="//@children.23/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="35,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.23" target="//@children.23" targetEnd="//@children.23/@sourceConnections.1/@children.1" sourceEnd="//@children.23/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,29" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="refines" location="0,14" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//BusAccessConnection/refines" anchorKind="FixedAtEdge" multiplicityLabel="//@children.23/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.23/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="refines" location="269,490" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="285,518" size="19,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//BusAccessConnection/refines"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.23" target="//@children.25" targetEnd="//@children.23/@sourceConnections.2/@children.1" sourceEnd="//@children.23/@sourceConnections.2/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="src" location="66,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//BusAccessConnection/src" multiplicityLabel="//@children.23/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.23/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="src" location="416,633" size="17,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="388,633" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//BusAccessConnection/src"/>
+      </children>
+      <bendpoints secondRelativeDimension="31,-61" firstRelativeDimension="31,67"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.23" target="//@children.25" targetEnd="//@children.23/@sourceConnections.3/@children.1" sourceEnd="//@children.23/@sourceConnections.3/@children.0" connectionRouterKind="Manual" autoLocated="true">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dst" location="29,0" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//BusAccessConnection/dst" multiplicityLabel="//@children.23/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.23/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dst" location="342,633" size="16,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="372,633" size="7,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="connection.ecore#//BusAccessConnection/dst"/>
+      </children>
+      <bendpoints secondRelativeDimension="-23,-68" firstRelativeDimension="-40,60"/>
+    </sourceConnections>
+    <model href="connection.ecore#//BusAccessConnection"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.15/@sourceConnections.0 //@children.16/@sourceConnections.2 //@children.16/@sourceConnections.3" name="DataAccessEnd" location="91,654" size="139,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//DataAccessEnd" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.24" target="//@children.35" targetEnd="//@children.24/@sourceConnections.0/@children.1" sourceEnd="//@children.24/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,29"/>
+    </sourceConnections>
+    <model href="connection.ecore#//DataAccessEnd"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.22/@sourceConnections.0 //@children.23/@sourceConnections.2 //@children.23/@sourceConnections.3" name="BusAccessEnd" location="336,654" size="133,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/connection.ecore#//BusAccessEnd" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.25" target="//@children.35" targetEnd="//@children.25/@sourceConnections.0/@children.1" sourceEnd="//@children.25/@sourceConnections.0/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="42,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="113,29"/>
+    </sourceConnections>
+    <model href="connection.ecore#//BusAccessEnd"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DataSubcomponent" location="83,841" size="247,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/component.ecore#//DataSubcomponent" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.26" target="//@children.15/@sourceConnections.0" targetEnd="//@children.26/@sourceConnections.0/@children.1" sourceEnd="//@children.26/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="123,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="514,27"/>
+    </sourceConnections>
+    <model href="component.ecore#//DataSubcomponent"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BusSubcomponent" location="347,841" size="241,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/component.ecore#//BusSubcomponent" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.27" target="//@children.22/@sourceConnections.0" targetEnd="//@children.27/@sourceConnections.0/@children.1" sourceEnd="//@children.27/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="120,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="514,27"/>
+    </sourceConnections>
+    <model href="component.ecore#//BusSubcomponent"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="81,646" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="321,651" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="575,684" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="683,102" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="1039,93" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="1366,97" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="1052,262" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.24/@sourceConnections.0 //@children.25/@sourceConnections.0 //@children.17/@sourceConnections.1" name="PropertyHolder" location="189,580" size="175,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//PropertyHolder" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="core.ecore#//PropertyHolder"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0" name="PropertyHolder" location="1060,20" size="175,29" id="platform:/resource/edu.cmu.sei.aadl.ecoremodel/ecoremodel/core.ecore#//PropertyHolder" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="core.ecore#//PropertyHolder"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="1045,17" size="9,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="A" location="177,575" size="9,14" fontInfo="Arial-8-0"/>
+  <model href="connection.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:connection="http:///AADL/connection" xmlns:core="http:///AADL/core" xmlns:instance="http:///AADL/instance" xmlns:property="http:///AADL/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/instance">
+<xsd:import namespace="http:///AADL/connection" schemaLocation="connection.xsd"/>
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:import namespace="http:///AADL/property" schemaLocation="property.xsd"/>
+<xsd:simpleType name="FeatureCategory">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="data"/>
+<xsd:enumeration value="event"/>
+<xsd:enumeration value="parameter"/>
+<xsd:enumeration value="subprogram"/>
+<xsd:enumeration value="eventdata"/>
+<xsd:enumeration value="busaccess"/>
+<xsd:enumeration value="dataaccess"/>
+<xsd:enumeration value="portgroup"/>
+<xsd:enumeration value="serversubprogram"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="FeatureInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="featureInstance" type="instance:FeatureInstance"/>
+</xsd:sequence>
+<xsd:attribute default="data" name="category" type="instance:FeatureCategory"/>
+<xsd:attribute name="feature" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FeatureInstance" type="instance:FeatureInstance"/>
+<xsd:complexType name="ConnectionInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:FlowElementInstance">
+<xsd:attribute name="connection" type="xsd:string"/>
+<xsd:attribute name="inSystemOperationMode" type="xsd:string"/>
+<xsd:attribute name="connectionContext" type="xsd:string"/>
+<xsd:attribute name="inModeTransitions" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="ComponentInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="featureInstance" type="instance:FeatureInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="componentInstance" type="instance:ComponentInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="modeInstance" type="instance:ModeInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="modeTransitionInstance" type="instance:ModeTransitionInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="flowSpecInstance" type="instance:FlowSpecInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="endToEndFlowInstance" type="instance:EndToEndFlowInstance"/>
+</xsd:sequence>
+<xsd:attribute default="DATA" name="category" type="property:ComponentCategory"/>
+<xsd:attribute name="subcomponent" type="xsd:string"/>
+<xsd:attribute name="inModes" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ComponentInstance" type="instance:ComponentInstance"/>
+<xsd:complexType name="SystemInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:ComponentInstance">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="connectionInstance" type="instance:ConnectionInstance"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="systemOperationMode" type="instance:SystemOperationMode"/>
+</xsd:sequence>
+<xsd:attribute name="systemImpl" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemInstance" type="instance:SystemInstance"/>
+<xsd:complexType name="InstanceObject">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PortConnectionInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:ConnectionInstance">
+<xsd:attribute default="Immediate" name="timing" type="connection:ConnectionTiming" use="required"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PortConnectionInstance" type="instance:PortConnectionInstance"/>
+<xsd:complexType name="AccessConnectionInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:ConnectionInstance">
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AccessConnectionInstance" type="instance:AccessConnectionInstance"/>
+<xsd:complexType name="ModeTransitionConnectionInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:ConnectionInstance">
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ModeTransitionConnectionInstance" type="instance:ModeTransitionConnectionInstance"/>
+<xsd:complexType name="ModeInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject">
+<xsd:attribute default="NORMAL" name="state" type="core:ModeState" use="required"/>
+<xsd:attribute name="mode" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ModeInstance" type="instance:ModeInstance"/>
+<xsd:complexType name="ModeTransitionInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject">
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="modeTransition" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ModeTransitionInstance" type="instance:ModeTransitionInstance"/>
+<xsd:complexType name="InstanceReferenceValue">
+<xsd:complexContent>
+<xsd:extension base="property:ReferenceValue">
+<xsd:attribute name="referencedInstanceObject" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="InstanceReferenceValue" type="instance:InstanceReferenceValue"/>
+<xsd:complexType name="SystemInstanceConfiguration">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="containedPropertyAssociation" type="property:PropertyAssociation"/>
+</xsd:sequence>
+<xsd:attribute name="systemOperationMode" type="xsd:string"/>
+<xsd:attribute name="systemInstance" type="xsd:string"/>
+</xsd:complexType>
+<xsd:element name="SystemInstanceConfiguration" type="instance:SystemInstanceConfiguration"/>
+<xsd:complexType name="SystemOperationMode">
+<xsd:complexContent>
+<xsd:extension base="core:Mode">
+<xsd:attribute name="currentMode" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemOperationMode" type="instance:SystemOperationMode"/>
+<xsd:complexType name="FlowSpecInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:FlowElementInstance">
+<xsd:attribute name="flowSpec" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSpecInstance" type="instance:FlowSpecInstance"/>
+<xsd:complexType name="EndToEndFlowInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject">
+<xsd:attribute name="endToEndFlow" type="xsd:string"/>
+<xsd:attribute name="flowElementInstance" type="xsd:string"/>
+<xsd:attribute name="inModes" type="xsd:string"/>
+<xsd:attribute name="inSystemOperationMode" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EndToEndFlowInstance" type="instance:EndToEndFlowInstance"/>
+<xsd:complexType name="FlowElementInstance">
+<xsd:complexContent>
+<xsd:extension base="instance:InstanceObject"/>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

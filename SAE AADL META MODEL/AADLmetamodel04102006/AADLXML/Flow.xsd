@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:core="http:///AADL/core" xmlns:flow="http:///AADL/flow" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/flow">
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:complexType name="FlowSpec">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder">
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSpec" type="flow:FlowSpec"/>
+<xsd:complexType name="Flows">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="contents" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Flows" type="flow:Flows"/>
+<xsd:complexType name="FlowImpl">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowSequence"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="FlowSpecs">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="contents" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSpecs" type="flow:FlowSpecs"/>
+<xsd:complexType name="EndToEndFlow">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowSequence"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EndToEndFlow" type="flow:EndToEndFlow"/>
+<xsd:complexType name="FlowPoint"/>
+<xsd:element name="FlowPoint" type="flow:FlowPoint"/>
+<xsd:complexType name="FlowSourceSpec">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowSpec">
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="dstContext" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSourceSpec" type="flow:FlowSourceSpec"/>
+<xsd:complexType name="FlowSinkSpec">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowSpec">
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="srcContext" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSinkSpec" type="flow:FlowSinkSpec"/>
+<xsd:complexType name="FlowPathSpec">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowSpec">
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="srcContext" type="xsd:string"/>
+<xsd:attribute name="dstContext" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowPathSpec" type="flow:FlowPathSpec"/>
+<xsd:complexType name="FlowSourceImpl">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowImpl">
+<xsd:attribute name="implement" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSourceImpl" type="flow:FlowSourceImpl"/>
+<xsd:complexType name="FlowSinkImpl">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowImpl">
+<xsd:attribute name="implement" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSinkImpl" type="flow:FlowSinkImpl"/>
+<xsd:complexType name="FlowPathImpl">
+<xsd:complexContent>
+<xsd:extension base="flow:FlowImpl">
+<xsd:attribute name="implement" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowPathImpl" type="flow:FlowPathImpl"/>
+<xsd:complexType name="FlowElement">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:attribute name="flowSpec" type="xsd:string"/>
+<xsd:attribute name="connection" type="xsd:string"/>
+<xsd:attribute name="flowContext" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowElement" type="flow:FlowElement"/>
+<xsd:complexType name="FlowSequence">
+<xsd:complexContent>
+<xsd:extension base="core:ModeMember">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="flowElement" type="flow:FlowElement"/>
+</xsd:sequence>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FlowSequence" type="flow:FlowSequence"/>
+</xsd:schema>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:connection="http:///AADL/connection" xmlns:core="http:///AADL/core" xmlns:feature="http:///AADL/feature" xmlns:flow="http:///AADL/flow" xmlns:property="http:///AADL/property" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/core">
+<xsd:import namespace="http:///AADL/property" schemaLocation="property.xsd"/>
+<xsd:import namespace="http:///AADL/feature" schemaLocation="feature.xsd"/>
+<xsd:import namespace="http:///AADL/connection" schemaLocation="connection.xsd"/>
+<xsd:import namespace="http:///AADL/flow" schemaLocation="flow.xsd"/>
+<xsd:import namespace="http://www.omg.org/XMI" schemaLocation="XMI.xsd"/>
+<xsd:simpleType name="ModeState">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="NORMAL"/>
+<xsd:enumeration value="INITIAL"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="AadlSpec">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="contents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AadlSpec" type="core:AadlSpec"/>
+<xsd:complexType name="AadlPackage">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="aadlPublic" type="core:AadlPublic"/>
+<xsd:element name="aadlPrivate" type="core:AadlPrivate"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AadlPackage" type="core:AadlPackage"/>
+<xsd:complexType name="AadlPrivate">
+<xsd:complexContent>
+<xsd:extension base="core:AadlPackageSection"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AadlPrivate" type="core:AadlPrivate"/>
+<xsd:complexType name="AadlPublic">
+<xsd:complexContent>
+<xsd:extension base="core:AadlPackageSection"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AadlPublic" type="core:AadlPublic"/>
+<xsd:complexType name="AadlPackageSection">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="contents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AadlPackageSection" type="core:AadlPackageSection"/>
+<xsd:complexType name="ComponentClassifier">
+<xsd:complexContent>
+<xsd:extension base="core:Classifier"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ComponentClassifier" type="core:ComponentClassifier"/>
+<xsd:complexType name="ComponentType">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="flowSpecs" type="flow:FlowSpecs"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ComponentType" type="core:ComponentType"/>
+<xsd:complexType name="Feature">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Feature" type="core:Feature"/>
+<xsd:complexType name="Features">
+<xsd:complexContent>
+<xsd:extension base="core:AObject"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Features" type="core:Features"/>
+<xsd:complexType name="ComponentImpl">
+<xsd:complexContent>
+<xsd:extension base="core:ComponentClassifier">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="connections" type="connection:Connections"/>
+<xsd:element name="modes" type="core:Modes"/>
+<xsd:element name="refinesType" type="core:RefinesType"/>
+<xsd:element name="flows" type="flow:Flows"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ComponentImpl" type="core:ComponentImpl"/>
+<xsd:complexType name="RefinesType">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="contents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="RefinesType" type="core:RefinesType"/>
+<xsd:complexType name="Subcomponents">
+<xsd:complexContent>
+<xsd:extension base="core:AObject"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Subcomponents" type="core:Subcomponents"/>
+<xsd:complexType name="Subcomponent">
+<xsd:complexContent>
+<xsd:extension base="core:ModeMember"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Subcomponent" type="core:Subcomponent"/>
+<xsd:complexType name="Connection">
+<xsd:complexContent>
+<xsd:extension base="core:ModeMember">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="srcContext" type="connection:FeatureContext"/>
+<xsd:element name="dstContext" type="connection:FeatureContext"/>
+<xsd:element name="inModeTransitions" type="core:ModeTransition"/>
+</xsd:choice>
+<xsd:attribute name="srcContext" type="xsd:string"/>
+<xsd:attribute name="dstContext" type="xsd:string"/>
+<xsd:attribute name="inModeTransitions" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Connection" type="core:Connection"/>
+<xsd:complexType name="Modes">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="mode" type="core:Mode"/>
+<xsd:element name="modeTransition" type="core:ModeTransition"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Modes" type="core:Modes"/>
+<xsd:complexType name="Mode">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="core:Mode"/>
+</xsd:choice>
+<xsd:attribute name="state" type="core:ModeState"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Mode" type="core:Mode"/>
+<xsd:complexType name="ModeTransition">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="srcMode" type="core:Mode"/>
+<xsd:element name="dstMode" type="core:Mode"/>
+<xsd:element name="triggerEventPort" type="feature:EventPort"/>
+<xsd:element name="triggerEventPortContext" type="connection:FeatureContext"/>
+</xsd:choice>
+<xsd:attribute name="srcMode" type="xsd:string"/>
+<xsd:attribute name="dstMode" type="xsd:string"/>
+<xsd:attribute name="triggerEventPort" type="xsd:string"/>
+<xsd:attribute name="triggerEventPortContext" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ModeTransition" type="core:ModeTransition"/>
+<xsd:complexType name="AnnexLibrary">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AnnexLibrary" type="core:AnnexLibrary"/>
+<xsd:complexType name="DefaultAnnexLibrary">
+<xsd:complexContent>
+<xsd:extension base="core:AnnexLibrary">
+<xsd:attribute name="value" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DefaultAnnexLibrary" type="core:DefaultAnnexLibrary"/>
+<xsd:complexType name="AnnexSubclause">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AnnexSubclause" type="core:AnnexSubclause"/>
+<xsd:complexType name="DefaultAnnexSubclause">
+<xsd:complexContent>
+<xsd:extension base="core:AnnexSubclause">
+<xsd:attribute name="value" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DefaultAnnexSubclause" type="core:DefaultAnnexSubclause"/>
+<xsd:complexType name="AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="comment" nillable="true" type="xsd:string"/>
+<xsd:element ref="xmi:Extension"/>
+</xsd:choice>
+<xsd:attribute ref="xmi:id"/>
+<xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+</xsd:complexType>
+<xsd:element name="AObject" type="core:AObject"/>
+<xsd:complexType name="NamedElement">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:attribute name="name" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="NamedElement" type="core:NamedElement"/>
+<xsd:complexType name="PropertyHolder">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="properties" type="property:Properties"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertyHolder" type="core:PropertyHolder"/>
+<xsd:complexType name="ModeMember">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="inModes" type="core:Mode"/>
+</xsd:choice>
+<xsd:attribute name="noMode" type="xsd:boolean" use="required"/>
+<xsd:attribute name="inModes" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ModeMember" type="core:ModeMember"/>
+<xsd:complexType name="Classifier">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="annexSubclause" type="core:AnnexSubclause"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Classifier" type="core:Classifier"/>
+</xsd:schema>

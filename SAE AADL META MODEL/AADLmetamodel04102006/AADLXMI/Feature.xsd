@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:component="http:///AADL/component" xmlns:core="http:///AADL/core" xmlns:feature="http:///AADL/feature" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/feature">
+<xsd:import namespace="http:///AADL/component" schemaLocation="component.xsd"/>
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:import namespace="http://www.omg.org/XMI" schemaLocation="XMI.xsd"/>
+<xsd:simpleType name="PortDirection">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="in"/>
+<xsd:enumeration value="out"/>
+<xsd:enumeration value="inout"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AccessDirection">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="provided"/>
+<xsd:enumeration value="required"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="Subprogram">
+<xsd:complexContent>
+<xsd:extension base="core:Feature">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:Subprogram"/>
+<xsd:element name="subprogramClassifier" type="component:SubprogramClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="subprogramClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Subprogram" type="feature:Subprogram"/>
+<xsd:complexType name="ServerSubprogram">
+<xsd:complexContent>
+<xsd:extension base="core:Feature">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:ServerSubprogram"/>
+<xsd:element name="subprogramClassifier" type="component:SubprogramClassifier"/>
+<xsd:element name="subprogram" type="feature:Subprogram"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="subprogramClassifier" type="xsd:string"/>
+<xsd:attribute name="subprogram" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ServerSubprogram" type="feature:ServerSubprogram"/>
+<xsd:complexType name="DataAccess">
+<xsd:complexContent>
+<xsd:extension base="feature:ComponentAccess">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:DataAccess"/>
+<xsd:element name="dataClassifier" type="component:DataClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="dataClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataAccess" type="feature:DataAccess"/>
+<xsd:complexType name="BusAccess">
+<xsd:complexContent>
+<xsd:extension base="feature:ComponentAccess">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:BusAccess"/>
+<xsd:element name="busClassifier" type="component:BusClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="busClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusAccess" type="feature:BusAccess"/>
+<xsd:complexType name="Port">
+<xsd:complexContent>
+<xsd:extension base="feature:AbstractPort">
+<xsd:attribute name="direction" type="feature:PortDirection" use="required"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Port" type="feature:Port"/>
+<xsd:complexType name="DataPort">
+<xsd:complexContent>
+<xsd:extension base="feature:Port">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:DataPort"/>
+<xsd:element name="dataClassifier" type="component:DataClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="dataClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataPort" type="feature:DataPort"/>
+<xsd:complexType name="EventPort">
+<xsd:complexContent>
+<xsd:extension base="feature:Port">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:EventPort"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EventPort" type="feature:EventPort"/>
+<xsd:complexType name="EventDataPort">
+<xsd:complexContent>
+<xsd:extension base="feature:Port">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:EventDataPort"/>
+<xsd:element name="dataClassifier" type="component:DataClassifier"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="dataClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EventDataPort" type="feature:EventDataPort"/>
+<xsd:complexType name="Parameter">
+<xsd:complexContent>
+<xsd:extension base="feature:AbstractPort">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="feature:Parameter"/>
+<xsd:element name="dataClassifier" type="component:DataClassifier"/>
+</xsd:choice>
+<xsd:attribute name="direction" type="feature:PortDirection" use="required"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="dataClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Parameter" type="feature:Parameter"/>
+<xsd:complexType name="PortGroupType">
+<xsd:complexContent>
+<xsd:extension base="core:Classifier">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="extend" type="feature:PortGroupType"/>
+<xsd:element name="inverseOf" type="feature:PortGroupType"/>
+<xsd:element name="features" type="feature:PortGroupFeatures"/>
+</xsd:choice>
+<xsd:attribute name="extend" type="xsd:string"/>
+<xsd:attribute name="inverseOf" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PortGroupType" type="feature:PortGroupType"/>
+<xsd:complexType name="PortGroup">
+<xsd:complexContent>
+<xsd:extension base="feature:AbstractPort">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="portGroupType" type="feature:PortGroupType"/>
+<xsd:element name="refines" type="feature:PortGroup"/>
+</xsd:choice>
+<xsd:attribute name="portGroupType" type="xsd:string"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PortGroup" type="feature:PortGroup"/>
+<xsd:complexType name="DataFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataFeatures" type="feature:DataFeatures"/>
+<xsd:complexType name="SubprogramFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SubprogramFeatures" type="feature:SubprogramFeatures"/>
+<xsd:complexType name="SoftwareFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SoftwareFeatures" type="feature:SoftwareFeatures"/>
+<xsd:complexType name="ThreadFeatures">
+<xsd:complexContent>
+<xsd:extension base="feature:SoftwareFeatures"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadFeatures" type="feature:ThreadFeatures"/>
+<xsd:complexType name="ThreadGroupFeatures">
+<xsd:complexContent>
+<xsd:extension base="feature:SoftwareFeatures"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ThreadGroupFeatures" type="feature:ThreadGroupFeatures"/>
+<xsd:complexType name="ProcessFeatures">
+<xsd:complexContent>
+<xsd:extension base="feature:SoftwareFeatures"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessFeatures" type="feature:ProcessFeatures"/>
+<xsd:complexType name="ProcessorFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ProcessorFeatures" type="feature:ProcessorFeatures"/>
+<xsd:complexType name="MemoryFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="busAccess" type="feature:BusAccess"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="MemoryFeatures" type="feature:MemoryFeatures"/>
+<xsd:complexType name="BusFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="busAccess" type="feature:BusAccess"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusFeatures" type="feature:BusFeatures"/>
+<xsd:complexType name="DeviceFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:Features">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DeviceFeatures" type="feature:DeviceFeatures"/>
+<xsd:complexType name="SystemFeatures">
+<xsd:complexContent>
+<xsd:extension base="feature:SoftwareFeatures"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="SystemFeatures" type="feature:SystemFeatures"/>
+<xsd:complexType name="ComponentAccess">
+<xsd:complexContent>
+<xsd:extension base="core:Feature">
+<xsd:attribute name="direction" type="feature:AccessDirection"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ComponentAccess" type="feature:ComponentAccess"/>
+<xsd:complexType name="PortGroupFeatures">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="features" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PortGroupFeatures" type="feature:PortGroupFeatures"/>
+<xsd:complexType name="AbstractPort">
+<xsd:complexContent>
+<xsd:extension base="core:Feature"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="AbstractPort" type="feature:AbstractPort"/>
+</xsd:schema>

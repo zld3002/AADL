@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:core="http:///AADL/core" xmlns:property="http:///AADL/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/property">
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:simpleType name="PropertyOwnerCategory">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="DATA"/>
+<xsd:enumeration value="SUBPROGRAM"/>
+<xsd:enumeration value="THREAD"/>
+<xsd:enumeration value="THREAD_GROUP"/>
+<xsd:enumeration value="PROCESS"/>
+<xsd:enumeration value="MEMORY"/>
+<xsd:enumeration value="PROCESSOR"/>
+<xsd:enumeration value="BUS"/>
+<xsd:enumeration value="DEVICE"/>
+<xsd:enumeration value="SYSTEM"/>
+<xsd:enumeration value="MODE"/>
+<xsd:enumeration value="PORT_GROUP"/>
+<xsd:enumeration value="PORT"/>
+<xsd:enumeration value="EVENT_PORT"/>
+<xsd:enumeration value="DATA_PORT"/>
+<xsd:enumeration value="EVENT_DATA_PORT"/>
+<xsd:enumeration value="SERVER_SUBPROGRAM"/>
+<xsd:enumeration value="CONNECTIONS"/>
+<xsd:enumeration value="PORT_GROUP_CONNECTIONS"/>
+<xsd:enumeration value="PORT_CONNECTIONS"/>
+<xsd:enumeration value="EVENT_PORT_CONNECTIONS"/>
+<xsd:enumeration value="DATA_PORT_CONNECTIONS"/>
+<xsd:enumeration value="EVENT_DATA_PORT_CONNECTIONS"/>
+<xsd:enumeration value="ACCESS_CONNECTIONS"/>
+<xsd:enumeration value="FLOW"/>
+<xsd:enumeration value="PARAMETER"/>
+<xsd:enumeration value="PARAMETER_CONNECTIONS"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ComponentCategory">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="DATA"/>
+<xsd:enumeration value="SUBPROGRAM"/>
+<xsd:enumeration value="THREAD"/>
+<xsd:enumeration value="THREAD_GROUP"/>
+<xsd:enumeration value="PROCESS"/>
+<xsd:enumeration value="MEMORY"/>
+<xsd:enumeration value="PROCESSOR"/>
+<xsd:enumeration value="BUS"/>
+<xsd:enumeration value="DEVICE"/>
+<xsd:enumeration value="SYSTEM"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ReferableElementCategory">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="DATA"/>
+<xsd:enumeration value="SUBPROGRAM"/>
+<xsd:enumeration value="THREAD"/>
+<xsd:enumeration value="THREAD_GROUP"/>
+<xsd:enumeration value="PROCESS"/>
+<xsd:enumeration value="MEMORY"/>
+<xsd:enumeration value="PROCESSOR"/>
+<xsd:enumeration value="BUS"/>
+<xsd:enumeration value="DEVICE"/>
+<xsd:enumeration value="SYSTEM"/>
+<xsd:enumeration value="CONNECTIONS"/>
+<xsd:enumeration value="SERVER_SUBPROGRAM"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="Properties">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="propertyAssociation" type="property:PropertyAssociation"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Properties" type="property:Properties"/>
+<xsd:complexType name="PropertyAssociation">
+<xsd:complexContent>
+<xsd:extension base="core:ModeMember">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="propertyValue" type="property:PropertyValue"/>
+</xsd:sequence>
+<xsd:attribute default="false" name="constant" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="access" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="append" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="derived" type="xsd:boolean" use="required"/>
+<xsd:attribute name="propertyDefinition" type="xsd:string"/>
+<xsd:attribute name="inBinding" type="xsd:string"/>
+<xsd:attribute name="appliesTo" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertyAssociation" type="property:PropertyAssociation"/>
+<xsd:complexType name="PropertyDefinition">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:sequence>
+<xsd:element maxOccurs="27" minOccurs="0" name="appliesto" type="property:PropertyOwnerCategory"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="propertyType" type="property:PropertyType"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="defaultpropertyValue" type="property:PropertyValue"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="appliesToClassifier" type="property:ClassifierValue"/>
+</xsd:sequence>
+<xsd:attribute default="false" name="access" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="inherit" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="list" type="xsd:boolean" use="required"/>
+<xsd:attribute default="false" name="hasEmptyList" type="xsd:boolean" use="required"/>
+<xsd:attribute name="propertyTypeReference" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertyDefinition" type="property:PropertyDefinition"/>
+<xsd:complexType name="PropertySet">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="contents" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="propertyType" type="property:PropertyType"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertySet" type="property:PropertySet"/>
+<xsd:complexType name="Aadlboolean">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyConstantType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Aadlboolean" type="property:Aadlboolean"/>
+<xsd:complexType name="Aadlstring">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyConstantType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Aadlstring" type="property:Aadlstring"/>
+<xsd:complexType name="Aadlinteger">
+<xsd:complexContent>
+<xsd:extension base="property:NumberType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Aadlinteger" type="property:Aadlinteger"/>
+<xsd:complexType name="NumberType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyConstantType">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="0" name="propertyType" type="property:UnitsType"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="lower" type="property:NumberOrPropertyReference"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="upper" type="property:NumberOrPropertyReference"/>
+</xsd:sequence>
+<xsd:attribute name="propertyTypeReference" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PropertyType">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="RangeType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyConstantType">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="0" name="propertyType" type="property:NumberType"/>
+</xsd:sequence>
+<xsd:attribute name="propertyTypeReference" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="RangeType" type="property:RangeType"/>
+<xsd:complexType name="ClassifierType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyType">
+<xsd:sequence>
+<xsd:element maxOccurs="10" minOccurs="0" name="category" type="property:ComponentCategory"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ClassifierType" type="property:ClassifierType"/>
+<xsd:complexType name="ReferenceType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyType">
+<xsd:sequence>
+<xsd:element maxOccurs="11" minOccurs="0" name="category" type="property:ReferableElementCategory"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ReferenceType" type="property:ReferenceType"/>
+<xsd:complexType name="EnumType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyConstantType">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="1" name="enumLiteral" type="property:EnumLiteral"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EnumType" type="property:EnumType"/>
+<xsd:complexType name="UnitsType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyType">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="1" name="unitLiteral" type="property:UnitLiteral"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="UnitsType" type="property:UnitsType"/>
+<xsd:complexType name="EnumLiteral">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EnumLiteral" type="property:EnumLiteral"/>
+<xsd:complexType name="UnitLiteral">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="0" name="factor" type="property:NumberValue"/>
+</xsd:sequence>
+<xsd:attribute name="baseunit" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="UnitLiteral" type="property:UnitLiteral"/>
+<xsd:complexType name="PropertyValue">
+<xsd:complexContent>
+<xsd:extension base="core:AObject"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="BooleanValue">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanOrPropertyReference">
+<xsd:attribute default="false" name="value" type="xsd:boolean" use="required"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="RangeValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="minimum" type="property:NumberOrPropertyReference"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="maximum" type="property:NumberOrPropertyReference"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="delta" type="property:NumberOrPropertyReference"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="RangeValue" type="property:RangeValue"/>
+<xsd:complexType name="BooleanAND">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanValue">
+<xsd:sequence>
+<xsd:element maxOccurs="2" minOccurs="2" name="booleanValue" type="property:BooleanOrPropertyReference"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BooleanAND" type="property:BooleanAND"/>
+<xsd:complexType name="BooleanOR">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanValue">
+<xsd:sequence>
+<xsd:element maxOccurs="2" minOccurs="2" name="booleanValue" type="property:BooleanOrPropertyReference"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BooleanOR" type="property:BooleanOR"/>
+<xsd:complexType name="BooleanNOT">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanValue">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="booleanValue" type="property:BooleanOrPropertyReference"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BooleanNOT" type="property:BooleanNOT"/>
+<xsd:complexType name="TRUE">
+<xsd:complexContent>
+<xsd:extension base="property:TrueFalseValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="TRUE" type="property:TRUE"/>
+<xsd:complexType name="FALSE">
+<xsd:complexContent>
+<xsd:extension base="property:TrueFalseValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FALSE" type="property:FALSE"/>
+<xsd:complexType name="StringValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:attribute name="value" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="StringValue" type="property:StringValue"/>
+<xsd:complexType name="NumberValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:attribute name="valueString" type="xsd:string" use="required"/>
+<xsd:attribute name="unitLiteral" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="NumberValue" type="property:NumberValue"/>
+<xsd:complexType name="IntegerValue">
+<xsd:complexContent>
+<xsd:extension base="property:NumberValue">
+<xsd:attribute name="value" type="xsd:long"/>
+<xsd:attribute name="base" type="xsd:int"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="IntegerValue" type="property:IntegerValue"/>
+<xsd:complexType name="RealValue">
+<xsd:complexContent>
+<xsd:extension base="property:NumberValue">
+<xsd:attribute name="value" type="xsd:double"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="RealValue" type="property:RealValue"/>
+<xsd:complexType name="IntegerRangeValue">
+<xsd:complexContent>
+<xsd:extension base="property:RangeValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="IntegerRangeValue" type="property:IntegerRangeValue"/>
+<xsd:complexType name="RealRangeValue">
+<xsd:complexContent>
+<xsd:extension base="property:RangeValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="RealRangeValue" type="property:RealRangeValue"/>
+<xsd:complexType name="EnumValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:attribute name="enumLiteral" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EnumValue" type="property:EnumValue"/>
+<xsd:complexType name="ClassifierValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:attribute name="value" type="property:ComponentCategory" use="required"/>
+<xsd:attribute name="componentClassifier" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ClassifierValue" type="property:ClassifierValue"/>
+<xsd:complexType name="PropertyReference">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanOrPropertyReference">
+<xsd:attribute name="referenceSign" type="xsd:string"/>
+<xsd:attribute name="referencedProperty" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertyReference" type="property:PropertyReference"/>
+<xsd:complexType name="Aadlreal">
+<xsd:complexContent>
+<xsd:extension base="property:NumberType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Aadlreal" type="property:Aadlreal"/>
+<xsd:complexType name="PropertyConstant">
+<xsd:complexContent>
+<xsd:extension base="core:NamedElement">
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="0" name="propertyType" type="property:PropertyConstantType"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="constantValue" type="property:PropertyValue"/>
+</xsd:sequence>
+<xsd:attribute default="false" name="list" type="xsd:boolean" use="required"/>
+<xsd:attribute name="propertyTypeReference" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PropertyConstant" type="property:PropertyConstant"/>
+<xsd:complexType name="ReferencedProperty"/>
+<xsd:element name="ReferencedProperty" type="property:ReferencedProperty"/>
+<xsd:complexType name="ReferenceValue">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue">
+<xsd:attribute name="referenceElement" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ReferenceValue" type="property:ReferenceValue"/>
+<xsd:complexType name="ReferenceElement"/>
+<xsd:complexType name="TrueFalseValue">
+<xsd:complexContent>
+<xsd:extension base="property:BooleanValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PropertyConstantType">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyType"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="BooleanOrPropertyReference">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="PropertyValueHolder"/>
+<xsd:complexType name="NumberOrPropertyReference">
+<xsd:complexContent>
+<xsd:extension base="property:PropertyValue"/>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>

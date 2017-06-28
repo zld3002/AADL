@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:connection="http:///AADL/connection" xmlns:core="http:///AADL/core" xmlns:feature="http:///AADL/feature" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:///AADL/connection">
+<xsd:import namespace="http:///AADL/feature" schemaLocation="feature.xsd"/>
+<xsd:import namespace="http:///AADL/core" schemaLocation="core.xsd"/>
+<xsd:import namespace="http://www.omg.org/XMI" schemaLocation="XMI.xsd"/>
+<xsd:simpleType name="ConnectionTiming">
+<xsd:restriction base="xsd:NCName">
+<xsd:enumeration value="Immediate"/>
+<xsd:enumeration value="Delayed"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="Connections">
+<xsd:complexContent>
+<xsd:extension base="core:AObject">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="contents" nillable="true" type="xsd:string"/>
+</xsd:choice>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="Connections" type="connection:Connections"/>
+<xsd:complexType name="DataConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="connection:DataConnection"/>
+<xsd:element name="src" type="feature:DataPort"/>
+<xsd:element name="dst" type="feature:DataPort"/>
+</xsd:choice>
+<xsd:attribute name="timing" type="connection:ConnectionTiming"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataConnection" type="connection:DataConnection"/>
+<xsd:complexType name="EventConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="dst" type="feature:EventPort"/>
+<xsd:element name="src" type="feature:EventPort"/>
+<xsd:element name="refines" type="connection:EventConnection"/>
+</xsd:choice>
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EventConnection" type="connection:EventConnection"/>
+<xsd:complexType name="EventDataConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="dst" type="feature:EventDataPort"/>
+<xsd:element name="src" type="feature:EventDataPort"/>
+<xsd:element name="refines" type="connection:EventDataConnection"/>
+</xsd:choice>
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="EventDataConnection" type="connection:EventDataConnection"/>
+<xsd:complexType name="PortGroupConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="src" type="feature:PortGroup"/>
+<xsd:element name="dst" type="feature:PortGroup"/>
+<xsd:element name="refines" type="connection:PortGroupConnection"/>
+</xsd:choice>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+<xsd:attribute name="refines" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="PortGroupConnection" type="connection:PortGroupConnection"/>
+<xsd:complexType name="FeatureContext">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="FeatureContext" type="connection:FeatureContext"/>
+<xsd:complexType name="DataAccessConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="connection:DataAccessConnection"/>
+<xsd:element name="src" type="connection:DataAccessEnd"/>
+<xsd:element name="dst" type="connection:DataAccessEnd"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataAccessConnection" type="connection:DataAccessConnection"/>
+<xsd:complexType name="ParameterEnd">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ParameterEnd" type="connection:ParameterEnd"/>
+<xsd:complexType name="ParameterConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="connection:ParameterConnection"/>
+<xsd:element name="src" type="connection:ParameterEnd"/>
+<xsd:element name="dst" type="connection:ParameterEnd"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="ParameterConnection" type="connection:ParameterConnection"/>
+<xsd:complexType name="BusAccessConnection">
+<xsd:complexContent>
+<xsd:extension base="core:Connection">
+<xsd:choice maxOccurs="unbounded" minOccurs="0">
+<xsd:element name="refines" type="connection:BusAccessConnection"/>
+<xsd:element name="src" type="connection:BusAccessEnd"/>
+<xsd:element name="dst" type="connection:BusAccessEnd"/>
+</xsd:choice>
+<xsd:attribute name="refines" type="xsd:string"/>
+<xsd:attribute name="src" type="xsd:string"/>
+<xsd:attribute name="dst" type="xsd:string"/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusAccessConnection" type="connection:BusAccessConnection"/>
+<xsd:complexType name="DataAccessEnd">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="DataAccessEnd" type="connection:DataAccessEnd"/>
+<xsd:complexType name="BusAccessEnd">
+<xsd:complexContent>
+<xsd:extension base="core:PropertyHolder"/>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:element name="BusAccessEnd" type="connection:BusAccessEnd"/>
+</xsd:schema>
